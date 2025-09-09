@@ -1,0 +1,22 @@
+import time
+
+TARGET_SECONDS = 10.0
+
+print("Guess when 10 seconds have elapsed.")
+input("Press Enter to start...")
+start = time.perf_counter()
+
+input("Press Enter again when you think 10 seconds have passed...")
+end = time.perf_counter()
+
+elapsed = end - start
+difference = elapsed - TARGET_SECONDS
+abs_diff = abs(difference)
+
+print(f"\nYou waited: {elapsed:.3f} seconds.")
+if difference > 0:
+    print(f"That's {abs_diff:.3f} seconds late.")
+elif difference < 0:
+    print(f"That's {abs_diff:.3f} seconds early.")
+else:
+    print("Perfect! Exactly 10.000 seconds.")
